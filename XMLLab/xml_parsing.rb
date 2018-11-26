@@ -20,12 +20,13 @@ class GuiseppesMenu
   def calories
     calories = @menu_calories
     counter = 0
+    calories.pop
+    limiter = calories.length
     calories.each do |i|
       counter =+ 1
-      if counter <= calories.length[-1]
+      if counter <= limiter
         @calories_array << i.text
       end
-      puts @calories_array
     end
   end
 
@@ -37,6 +38,3 @@ class GuiseppesMenu
   # Place your methods here
 
 end
-
-p = GuiseppesMenu.new
-p.calories
